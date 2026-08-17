@@ -1,0 +1,129 @@
+# General settings
+
+set multiplot layout 4,3
+
+set lmargin 6
+set rmargin 1
+set bmargin 1
+set tmargin 1
+
+
+set xtics font "Helvetica, 14" offset 0,.4
+set ytics font "Helvetica, 14" offset 0,0
+
+unset xlabel
+set ylabel "{/=16 {/Helvetica # of species lost}}" offset 2.6,0
+set key font "Helvetica, 15" samplen 2 at 0.5, 570
+
+## Plot1
+set title "(a) {/Symbol a}=2, {/Symbol b}=10" font "Helvetica, 18" offset 0.0,-1.3
+plot "a=2;b=10.dat" index 24 using 1:3 with lines lc "dark-green" ti "t_u=∞",\
+"" index 28 using 1:3 with lines lc "dark-orange" ti "t_u=0.5",\
+"" index 32 using 1:3 with lines lc "dark-yellow" ti "t_u=0.05"
+
+## Plot2
+set title "(b) {/Symbol a}=2, {/Symbol b}=30" font "Helvetica, 18" offset 0.0,-1.3
+plot "a=2;b=30.dat" index 24 using 1:3 with lines lc "dark-green" ti "",\
+"" index 28 using 1:3 with lines lc "dark-orange" ti "",\
+"" index 32 using 1:3 with lines lc "dark-yellow" ti ""
+
+## Plot3
+set title "(c) {/Symbol a}=10, {/Symbol b}=30" font "Helvetica, 18" offset 0.0,-1.3
+plot "a=10;b=30.dat" index 24 using 1:3 with lines lc "dark-green" ti "",\
+"" index 28 using 1:3 with lines lc "dark-orange" ti "",\
+"" index 32 using 1:3 with lines lc "dark-yellow" ti ""
+
+unset key
+set ylabel "{/=16 {/Helvetica Slope of EAR}}" offset 2,0
+set xlabel "{/=16 {/Helvetica Converted area}}" offset 0,1
+
+#2nd row ##########################
+set bmargin 2
+set tmargin 0
+
+unset title
+## Plot4
+plot "a=2;b=10.dat" index 24 using 1:4 ps .3 lc "dark-green",\
+"" index 24 using 1:5 with lines lw 2 lc "dark-green",\
+"" index 28 using 1:4 ps .3 lc "dark-orange",\
+"" index 28 using 1:5 with lines lw 2 lc "dark-orange",\
+"" index 32 using 1:4 ps .3 lc "dark-yellow",\
+"" index 32 using 1:5 with lines lw 2 lc "dark-yellow"
+
+## Plot5
+plot "a=2;b=30.dat" index 24 using 1:4 ps .3 lc "dark-green",\
+"" index 24 using 1:5 with lines lw 2 lc "dark-green",\
+"" index 28 using 1:4 ps .3 lc "dark-orange",\
+"" index 28 using 1:5 with lines lw 2 lc "dark-orange",\
+"" index 32 using 1:4 ps .3 lc "dark-yellow",\
+"" index 32 using 1:5 with lines lw 2 lc "dark-yellow"
+
+## Plot6
+plot "a=10;b=30.dat" index 24 using 1:4 ps .3 lc "dark-green",\
+"" index 24 using 1:5 with lines lw 2 lc "dark-green",\
+"" index 28 using 1:4 ps .3 lc "dark-orange",\
+"" index 28 using 1:5 with lines lw 2 lc "dark-orange",\
+"" index 32 using 1:4 ps .3 lc "dark-yellow",\
+"" index 32 using 1:5 with lines lw 2 lc "dark-yellow"
+
+# 3rd row #######################
+set bmargin 1
+set tmargin 1.2
+unset xlabel
+set ylabel "{/=16 {/Helvetica  # of species lost}}" offset 2.6,0
+
+## Plot1
+set title "(d) {/Symbol a}=2, {/Symbol b}=10, D_y=0.0025" font "Helvetica, 18" offset 0.0,-1.2
+plot "a=2;b=10_Dx.dat" index 24 using 1:3 with lines lc "dark-green" ti "",\
+"" index 28 using 1:3 with lines lc "dark-orange" ti "",\
+"" index 32 using 1:3 with lines lc "dark-yellow" ti ""
+
+unset label
+## Plot2
+set title "(e) {/Symbol a}=2, {/Symbol b}=10, LG" font "Helvetica, 18" offset 0.0,-1.2
+plot "a=2;b=10_gradient.dat" index 24 using 1:3 with lines lc "dark-green" ti "t_u=infinity",\
+"" index 28 using 1:3 with lines lc "dark-orange" ti "t_u=1",\
+"" index 32 using 1:3 with lines lc "dark-yellow" ti "t_u=0.1"
+
+## Plot3
+set title "(f) {/Symbol a}=2, {/Symbol b}=10, D_y=0.0025, LG" font "Helvetica, 18" offset 0.0,-1.2
+plot "a=2;b=10_gradient_Dx.dat" index 24 using 1:3 with lines lc "dark-green" ti "",\
+"" index 28 using 1:3 with lines lc "dark-orange" ti "",\
+"" index 32 using 1:3 with lines lc "dark-yellow" ti ""
+
+unset key
+set ylabel "{/=16 {/Helvetica Slope of EAR}}" offset 2,0
+
+#4th row ##########################
+set bmargin 1.8
+set tmargin 0
+set xlabel "{/=16 {/Helvetica Converted area}}" offset 0,1
+unset title
+set ylabel "{/=16 {/Helvetica Slope of EAR}}" offset 2,0
+
+## Plot4
+plot "a=2;b=10_Dx.dat" index 24 using 1:4 ps .3 lc "dark-green",\
+"" index 24 using 1:5 with lines lw 2 lc "dark-green",\
+"" index 28 using 1:4 ps .3 lc "dark-orange",\
+"" index 28 using 1:5 with lines lw 2 lc "dark-orange",\
+"" index 32 using 1:4 ps .3 lc "dark-yellow",\
+"" index 32 using 1:5 with lines lw 2 lc "dark-yellow"
+
+## Plot5
+plot "a=2;b=10_gradient.dat" index 24 using 1:4 ps .3 lc "dark-green",\
+"" index 24 using 1:5 with lines lw 2 lc "dark-green",\
+"" index 28 using 1:4 ps .3 lc "dark-orange",\
+"" index 28 using 1:5 with lines lw 2 lc "dark-orange",\
+"" index 32 using 1:4 ps .3 lc "dark-yellow",\
+"" index 32 using 1:5 with lines lw 2 lc "dark-yellow"
+
+## Plot6
+plot "a=2;b=10_gradient_Dx.dat" index 24 using 1:4 ps .3 lc "dark-green",\
+"" index 24 using 1:5 with lines lw 2 lc "dark-green",\
+"" index 28 using 1:4 ps .3 lc "dark-orange",\
+"" index 28 using 1:5 with lines lw 2 lc "dark-orange",\
+"" index 32 using 1:4 ps .3 lc "dark-yellow",\
+"" index 32 using 1:5 with lines lw 2 lc "dark-yellow"
+
+
+unset multiplot
